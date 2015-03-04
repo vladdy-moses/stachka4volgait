@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'DINProLight';
+	src: url('../fonts/DINProLight.eot');
+	src: local('DINProLight'), url('../fonts/DINProLight.woff') format('woff'), url('../fonts/DINProLight.ttf') format('truetype');
+}
+
+html {
+    font-family: 'DINProLight';
+}
+
+/* reset */
+
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+/* buttons */
+.button {
+    padding: 5px 12px;
+    background-color: #f8f8f8;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+
+    color: #303023;
+    text-decoration: none;
+}
+
+/* panel styles */
+header .topLine,
+.underHeader,
+.poster,
+.docs,
+.media,
+.partners,
+footer {
+    width: 940px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+/* heading styles */
+
+.docs h1,
+.partners h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Header */
+header {
+    background-color: #f8f8f8;
+}
+
+/* Map and poster */
+.poster {
+    width: 635px;
+    background-color: rgba(200, 100, 100, 0.8);
+}
+
+.poster h1,
+.poster h2 {
+    color: #fff;
+}
+
+/* Partners */
+#partnersWrapper {
+    background-color: #f8f8f8;
+    border-top: 1px solid #d8d8d8;
+}
+
+/* Footer */
+#footerWrapper {
+    background-color: #303023;
+}
