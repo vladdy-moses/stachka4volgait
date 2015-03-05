@@ -160,6 +160,21 @@ header {
         font-weight: normal;
     }
 
+#map {
+    width: 1420px;
+    height: 335px;
+    margin: 0 auto;
+    border: 1px solid #d8d8d8;
+    border-bottom: 3px solid #d8d8d8;
+}
+
+@media screen and (max-width: 1420px) {
+    #map {
+        width: 100%;
+        border: none;
+    }
+}
+
 /* Docs */
 #docsWrapper {
     padding: 60px 0 40px 0;
