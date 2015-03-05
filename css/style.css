@@ -45,13 +45,50 @@ ul {
     border-radius: 5px;
     color: #303023;
     text-decoration: none;
+    -webkit-transition: background-color 200ms linear;
+    -moz-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    -o-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
 }
 
-.button.video {
-    color: #fff;
-    background-color: #98925e;
-    border-color: #757042;
-    padding: 10px 25px;
+    .button:hover {
+        background-color: #f0f0f0;
+    }
+
+    .button.video {
+        color: #fff;
+        background-color: #98925e;
+        border-color: #757042;
+        padding: 10px 25px;
+    }
+
+        .button.video:hover {
+            background-color: #857f49;
+        }
+
+.file-type {
+    display: inline-block;
+    width: 40px;
+    height: 33px;
+    float: left;
+    margin-left: -14px;
+    margin-top: -7px;
+    border-right: 1px solid #fff;
+}
+
+    .file-type:after {
+        content: "";
+        height: 33px;
+        display: block;
+        z-index: -1;
+        border-right: 1px solid #e2e2e2;
+    }
+
+.pdf {
+    background-image: url(../img/pdf.png);
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 /* social */
@@ -64,6 +101,8 @@ ul.social {
     ul.social li {
         list-style-type: none;
         display: inline-block;
+        position: relative;
+        top: -0.5em;
     }
 
         ul.social li a {
@@ -80,12 +119,27 @@ ul.social {
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
+            -webkit-transition: background-color 200ms linear;
+            -moz-transition: background-color 200ms linear;
+            -ms-transition: background-color 200ms linear;
+            -o-transition: background-color 200ms linear;
+            transition: background-color 200ms linear;
         }
 
-        ul.social.revert li a {
-            background-color: #48483b;
-            border-color: #48483b;
-            color: #fff;
+            ul.social li a:hover {
+                background-color: #f0f0f0;
+                color: #000;
+            }
+
+    ul.social.revert li a {
+        background-color: #48483b;
+        border-color: #48483b;
+        color: #fff;
+    }
+
+        ul.social.revert li a:hover {
+            background-color: #303023;
+            color: #f8d168;
         }
 
 /* panel styles */
@@ -116,7 +170,53 @@ h1, h2 {
 /* Header */
 header {
     background-color: #f8f8f8;
+    border-bottom: 1px solid #d8d8d8;
 }
+
+.smallLogo {
+    display: none;
+}
+
+.topLine .register {
+    display: none;
+}
+
+.topLine .social {
+    float: right;
+    padding: 15px;
+}
+
+ul.menu {
+    padding: 0;
+    margin: 0;
+}
+
+    ul.menu li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 15px;
+    }
+
+        ul.menu li a {
+            text-decoration: none;
+            color: #4a4626;
+            transition: text-shadow 200ms linear;
+        }
+
+            ul.menu li a:hover {
+                text-shadow: 0 0 1px #ccc;
+            }
+
+.underHeader {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    clear: both;
+}
+
+    .underHeader .register {
+        float: right;
+        margin-top: 40px;
+    }
 
 /* Map and poster */
 #mapWrapper {
@@ -126,7 +226,6 @@ header {
     background-position-x: center;
     background-repeat: no-repeat;
     height: 335px;
-
     text-align: center;
 }
 
@@ -186,17 +285,17 @@ ul.buttons {
     margin: 0;
 }
 
-ul.buttons li {
-    list-style-type: none;
-    display: inline-block;
-    margin: 10px;
-    padding: 0;
-    width: 220px;
-}
+    ul.buttons li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 10px;
+        padding: 0;
+        width: 220px;
+    }
 
-ul.buttons .button {
-    display: block;
-}
+    ul.buttons .button {
+        display: block;
+    }
 
 /* Media */
 #mediaWrapper {
@@ -255,11 +354,95 @@ footer {
     }
 
     footer ul.social {
-        padding: 0;
-        margin: 0;
         float: right;
     }
 
 .copyLeft span {
     padding-right: 20px;
+}
+
+/* Popup */
+body.popupOpened {
+    /*overflow: hidden;*/
+}
+
+body.popupOpened #headerWrapper,
+body.popupOpened #mapWrapper,
+body.popupOpened #docsWrapper,
+body.popupOpened #mediaWrapper,
+body.popupOpened #partnersWrapper,
+body.popupOpened #footerWrapper {
+    -webkit-filter: blur(2px);
+    -moz-filter: url(../svg/filter.svg#blur);
+    -o-filter: url(../svg/filter.svg#blur);
+    filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2); /* IE8 */
+    filter: url(../svg/filter.svg#blur);
+}
+
+#popupWrapper {
+    display: none;
+}
+
+body.popupOpened #popupWrapper {
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    text-align: center;
+}
+
+#popupWrapper:before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.popup {
+    display: inline-block;
+    vertical-align: middle;
+    width: 470px;
+    text-align: left;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #999;
+    box-shadow: inset 0 0 15px #f0f0f0;
+}
+
+.formControl {
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #e2e2e2;
+    width: 420px;
+    margin-bottom: -1px;
+}
+
+.popup button {
+    background-color: #ef9875;
+    border: none;
+    padding: 15px 40px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fcf0eb;
+    -ms-text-shadow: 1px 1px 0 #e87e5f;
+    text-shadow: 1px 1px 0 #e87e5f;
+    text-transform: uppercase;
+}
+
+.popup a {
+    text-decoration: none;
+    color: #ef9875;
+    border-bottom: 1px dashed #ef9875;
+}
+
+.popup h3 {
+    padding: 0 0 20px 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 16px;
 }

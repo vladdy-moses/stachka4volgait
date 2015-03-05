@@ -29,8 +29,8 @@
             </div>
         </header>
         <div class="underHeader">
-            <img src="img/logoBig.png" alt="" class="bigLogo" />
             <a href="#" class="register button disabled">Зарегистрироваться</a>
+            <img src="img/logoBig.png" alt="" class="bigLogo" />
         </div>
     </div>
     <div id="mapWrapper">
@@ -55,7 +55,8 @@
     </div>
     <div id="mediaWrapper">
         <div class="media">
-            <a href="#" class="button video">Видео: «Стачка 2013: Как это было?»</a>
+            <a href="http://www.youtube.com/watch?v=bt-Xy0F0Fds" class="button video">Видео: «Стачка 2013: Как это было?»</a>
+            <div id="player"></div>
         </div>
     </div>
     <div id="partnersWrapper">
@@ -129,6 +130,23 @@
                 <a href="mailto:info@nastachku.ru">info@nastachku.ru</a>
             </div>
         </footer>
+    </div>
+    <div id="popupWrapper">
+        <div class="popup registerForm" tabindex="-1">
+            <h3>Регистрация</h3>
+            <form action="#" method="POST">
+                <div>
+                    <input type="text" placeholder="Имя" name="firstName" class="formControl" required="required" />
+                    <input type="text" placeholder="Фамилия" name="lastName" class="formControl" required="required" />
+                    <input type="email" placeholder="Ваш адрес электронной почты" name="email" class="formControl" required="required" />
+                    <input type="password" placeholder="Придумайте пароль" name="password" class="formControl" required="required" />
+                    <input type="password" placeholder="Повторите пароль" name="passwordReply" class="formControl" required="required" />
+                </div>
+                <p>Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (пользовательское соглашение)</p>
+                <button>Зарегистрироваться</button>
+            </form>
+            <p>Уже зарегистрировались? <a href="#" class="close">Войти в кабинет</a></p>
+        </div>
     </div>
 </body>
 </html>

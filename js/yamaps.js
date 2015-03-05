@@ -1,4 +1,7 @@
-﻿ymaps.ready(init);
+﻿$(function() {
+    ymaps.ready(init);
+});
+
 var myMap,
     myPlacemark;
 
