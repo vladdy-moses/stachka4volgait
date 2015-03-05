@@ -22,6 +22,7 @@
 
 html {
     font-family: 'Open Sans';
+    font-size: 14px;
 }
 
 /* reset */
@@ -37,13 +38,20 @@ ul {
 /* buttons */
 
 .button {
-    padding: 5px 12px;
+    padding: 7px 15px;
     background-color: #f8f8f8;
     border: 1px solid #d8d8d8;
     -ms-border-radius: 5px;
     border-radius: 5px;
     color: #303023;
     text-decoration: none;
+}
+
+.button.video {
+    color: #fff;
+    background-color: #98925e;
+    border-color: #757042;
+    padding: 10px 25px;
 }
 
 /* social */
@@ -60,6 +68,7 @@ ul.social {
 
         ul.social li a {
             display: block;
+            -ms-border-radius: 100%;
             border-radius: 100%;
             background-color: #fff;
             border: 1px solid #e2e2e2;
@@ -73,11 +82,16 @@ ul.social {
             text-decoration: none;
         }
 
+        ul.social.revert li a {
+            background-color: #48483b;
+            border-color: #48483b;
+            color: #fff;
+        }
+
 /* panel styles */
 
 header .topLine,
 .underHeader,
-.poster,
 .docs,
 .media,
 .partners,
@@ -105,10 +119,26 @@ header {
 }
 
 /* Map and poster */
+#mapWrapper {
+    background-image: url(../img/map.png);
+    -moz-background-position-x: center;
+    -o-background-position-x: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    height: 335px;
+
+    text-align: center;
+}
+
 .poster {
-    width: 635px;
+    display: inline-block;
     background-color: #ef9875;
     background-color: rgba(239, 152, 117, 0.9);
+    position: relative;
+    top: 50px;
+    padding: 50px 40px;
+    text-align: center;
+    border-radius: 5px;
 }
 
     .poster h1,
@@ -118,8 +148,14 @@ header {
         margin: 0;
     }
 
+    .poster h1 {
+        font-weight: lighter;
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
     .poster h2 {
-        font-size: 16pt;
+        font-size: 16px;
         font-family: 'Open Sans';
         font-weight: normal;
     }
@@ -127,6 +163,34 @@ header {
 /* Docs */
 #docsWrapper {
     padding: 60px 0 40px 0;
+    text-align: center;
+}
+
+ul.buttons {
+    padding: 0;
+    margin: 0;
+}
+
+ul.buttons li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+    width: 220px;
+}
+
+ul.buttons .button {
+    display: block;
+}
+
+/* Media */
+#mediaWrapper {
+    border-top: 1px solid #d8d8d8;
+}
+
+.media {
+    padding: 60px 0;
+    text-align: center;
 }
 
 /* Partners */
@@ -139,6 +203,7 @@ header {
 
     #partnersWrapper a {
         text-decoration: none;
+        font-size: 0;
     }
 
 .partner {
