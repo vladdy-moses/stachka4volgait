@@ -84,6 +84,8 @@ formsValidationInit = function () {
                 regex: /^[A-Za-zА-Яа-я\s-]*$/
             },
             email: {
+                minlength: 5,
+                maxlength: 128,
                 email: true,
                 regex: /^[^@]+@[^\.]+\.[^\.]{2,}/
             },

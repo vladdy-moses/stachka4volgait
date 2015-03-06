@@ -67,12 +67,12 @@ ul {
             background-color: #857f49;
         }
 
-        .button.disabled {
-            color: #d8d8d8;
-            background-color: #fff;
-            border-color: #ededed;
-            cursor: default;
-        }
+    .button.disabled {
+        color: #d8d8d8;
+        background-color: #fff;
+        border-color: #ededed;
+        cursor: default;
+    }
 
 .file-type {
     display: inline-block;
@@ -126,16 +126,28 @@ ul.social {
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            -webkit-transition: background-color 200ms linear;
-            -moz-transition: background-color 200ms linear;
-            -ms-transition: background-color 200ms linear;
-            -o-transition: background-color 200ms linear;
-            transition: background-color 200ms linear;
+            -webkit-transition: background-color 200ms linear, color 200ms linear;
+            -moz-transition: background-color 200ms linear, color 200ms linear;
+            -ms-transition: background-color 200ms linear, color 200ms linear;
+            -o-transition: background-color 200ms linear, color 200ms linear;
+            transition: background-color 200ms linear, color 200ms linear;
         }
 
-            ul.social li a:hover {
+ul.social li a:hover {
                 background-color: #f0f0f0;
                 color: #000;
+            }
+
+            ul.social li a.vk:hover {
+                color: #708cac;
+            }
+            
+            ul.social li a.tw:hover {
+                color: #31bbf0;
+            }
+            
+            ul.social li a.fb:hover {
+                color: #6078ab;
             }
 
     ul.social.revert li a {
@@ -162,6 +174,19 @@ footer {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1024px) {
+    header .topLine,
+    .underHeader,
+    .docs,
+    .media,
+    .partners,
+    footer {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 /* heading styles */
 
 h1, h2 {
@@ -186,6 +211,11 @@ header {
 
 .topLine .register {
     display: none;
+    background-color: #fbfbfb;
+}
+
+.topLine .register:hover {
+    background-color: #fff;
 }
 
 .topLine .social {
@@ -237,7 +267,7 @@ ul.menu {
 }
 
 .poster {
-    display: inline-block;
+    display: none;
     background-color: #ef9875;
     background-color: rgba(239, 152, 117, 0.9);
     position: relative;
@@ -522,7 +552,43 @@ body.popupOpened #popupWrapper {
     text-align: center;
 }
 
-.popup .closeLink a {
-    display: inline-block;
-    width: 245px;
+    .popup .closeLink a {
+        display: inline-block;
+        width: 245px;
+    }
+
+/* other media fixes */
+@media screen and (max-width: 1024px) {
+    ul.menu {
+        display: none;
+    }
+
+    .topLine .smallLogo {
+        display: block;
+    }
+
+    .topLine .register {
+        float: right;
+        margin-top: 8px;
+        display: block;
+    }
+
+    .underHeader {
+        display: none;
+    }
+
+    #mapWrapper {
+        background-image: none;
+        height: auto;
+    }
+
+    .poster {
+        display: block;
+        margin: 20px;
+        top: 0;
+    }
+
+    #map {
+        display: none;
+    }
 }
