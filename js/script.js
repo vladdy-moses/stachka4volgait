@@ -1,12 +1,13 @@
 $(function () {
     playerInit();
     popupInit();
+    formsValidationInit();
 });
 
 /* YouTube functions BEGIN */
 var player;
 
-playerInit = function() {
+playerInit = function () {
     $('#mediaWrapper .button.video').click(function (event) {
         event.preventDefault();
         $(this).hide();
@@ -38,19 +39,103 @@ function onPlayerReady(event) {
 /* END */
 
 /* Popup BEGIN */
-popupInit = function() {
-    $(".register").click(function(e) {
+popupInit = function () {
+    // hide success popup
+    $('#successPopup').hide();
+
+    $(".button.register").click(function (e) {
         e.preventDefault();
-        $('body').addClass('popupOpened');
-        $(".popup").focus();
+        if (!$(this).hasClass('disabled')) {
+            $('body').addClass('popupOpened');
+            $(".popup").focus();
+        }
     });
 
     $('.close').click(function () {
         $('body').removeClass('popupOpened');
     });
 
-    /*$(".popup").on('blur', function() {
-        $('body').removeClass('popupOpened');
-    });*/
+    $('#popupWrapper').click(function (e) {
+        if (this === e.target) {
+            $('body').removeClass('popupOpened');
+        }
+    });
 };
+/* END */
+
+/* Forms validation BEGIN */
+formsValidationInit = function () {
+    $('#registerForm').validate({
+        rules: {
+            firstName: {
+                minlength: 1,
+                maxlength: 64,
+                required: {
+                    depends: trimField
+                },
+                regex: /^[A-Za-zА-Яа-я\s-]*$/
+            },
+            lastName: {
+                minlength: 1,
+                maxlength: 64,
+                required: {
+                    depends: trimField
+                },
+                regex: /^[A-Za-zА-Яа-я\s-]*$/
+            },
+            email: {
+                email: true,
+                regex: /^[^@]+@[^\.]+\.[^\.]{2,}/
+            },
+            password: {
+                minlength: 8,
+                maxlength: 32,
+                passswordCheck: true
+            },
+            passwordReply: {
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            firstName: {
+                regex: "К вводу допускаются только буквы, цифры, знак - и пробел."
+            },
+            lastName: {
+                regex: "К вводу допускаются только буквы, цифры, знак - и пробел."
+            },
+            email: {
+                regex: "Почта должна находиться на домене минимум второго уровня."
+            }
+        },
+        submitHandler: function () {
+            $('#registerPopup').hide();
+            $('#successPopup').show();
+            $('.button.register').addClass('disabled');
+        }
+    });
+};
+
+trimField = function () {
+    var currentVal = $(this).val();
+    var trimmedVal = $.trim(currentVal);
+    if (currentVal !== trimmedVal) {
+        $(this).val(trimmedVal);
+    }
+    return true;
+};
+
+$.validator.addMethod(
+    "regex",
+    function (value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }
+);
+$.validator.addMethod(
+    "passswordCheck",
+    function (value, element) {
+        return /^[A-Za-z\d=!\-@._*]*$/.test(value) && /[A-Z]/.test(value) && /\d/.test(value) && /[=!\-@._*]/.test(value);
+    },
+    "Пароль обязательно должен состоять из латинских символов и содержать: минимум 1 заглавную букву, спецсимвол (= ! - @ . _ *) или цифру."
+);
 /* END */

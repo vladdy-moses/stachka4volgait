@@ -4,7 +4,7 @@ xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <filter id="blur">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2 2" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5 5" />
     </filter>
   </defs>
 </svg>

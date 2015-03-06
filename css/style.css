@@ -67,6 +67,13 @@ ul {
             background-color: #857f49;
         }
 
+        .button.disabled {
+            color: #d8d8d8;
+            background-color: #fff;
+            border-color: #ededed;
+            cursor: default;
+        }
+
 .file-type {
     display: inline-block;
     width: 40px;
@@ -366,18 +373,18 @@ body.popupOpened {
     /*overflow: hidden;*/
 }
 
-body.popupOpened #headerWrapper,
-body.popupOpened #mapWrapper,
-body.popupOpened #docsWrapper,
-body.popupOpened #mediaWrapper,
-body.popupOpened #partnersWrapper,
-body.popupOpened #footerWrapper {
-    -webkit-filter: blur(2px);
-    -moz-filter: url(../svg/filter.svg#blur);
-    -o-filter: url(../svg/filter.svg#blur);
-    filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2); /* IE8 */
-    filter: url(../svg/filter.svg#blur);
-}
+    body.popupOpened #headerWrapper,
+    body.popupOpened #mapWrapper,
+    body.popupOpened #docsWrapper,
+    body.popupOpened #mediaWrapper,
+    body.popupOpened #partnersWrapper,
+    body.popupOpened #footerWrapper {
+        -webkit-filter: blur(5px);
+        -moz-filter: url(../svg/filter.svg#blur);
+        -o-filter: url(../svg/filter.svg#blur);
+        filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5); /* IE8 */
+        filter: url(../svg/filter.svg#blur);
+    }
 
 #popupWrapper {
     display: none;
@@ -409,9 +416,22 @@ body.popupOpened #popupWrapper {
     text-align: left;
     padding: 30px;
     background-color: #fff;
-    border: 1px solid #999;
+    border: 1px solid #ef9875;
     box-shadow: inset 0 0 15px #f0f0f0;
+    outline: none;
 }
+
+    .popup .headerClose {
+        float: right;
+        margin-top: -31px;
+        margin-right: -31px;
+        display: inline-block;
+        border: 1px solid #ef9875;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
 
 .formControl {
     display: block;
@@ -421,7 +441,55 @@ body.popupOpened #popupWrapper {
     margin-bottom: -1px;
 }
 
-.popup button {
+    .formControl.error {
+        color: #fd1515;
+        border-color: #ef9875;
+        width: 400px;
+        padding-right: 40px;
+    }
+
+    .formControl + label {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        float: right;
+        margin-top: -34px;
+        margin-right: 10px;
+        border: 1px solid #cccccc;
+        -ms-border-radius: 100%;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 32px;
+        font-style: normal;
+        font-size: 0;
+        color: transparent;
+    }
+
+        .formControl + label:before {
+            font-size: 20px;
+        }
+
+        .formControl + label.error {
+            border-color: #fd3557;
+        }
+
+            .formControl + label.error:before {
+                content: "!";
+                color: #fd3557;
+            }
+
+/*.icon.warning {
+    border-color: #fdb303;
+    color: #fdb303;
+}
+
+    .icon.warning:before {
+        content: "?";
+    }
+    */
+
+.popup button,
+.popup .closeLink a {
     background-color: #ef9875;
     border: none;
     padding: 15px 40px;
@@ -445,4 +513,16 @@ body.popupOpened #popupWrapper {
     margin: 0;
     text-transform: uppercase;
     font-size: 16px;
+}
+
+/* OK button in success popup */
+
+.popup .closeLink {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.popup .closeLink a {
+    display: inline-block;
+    width: 245px;
 }
