@@ -20,10 +20,8 @@
                     <li><a href="https://twitter.com/it73ru" class="tw">t</a></li>
                     <li><a href="https://vk.com/nastachku" class="vk">B</a></li>
                 </ul>
-
                 <a href="#" class="register button">Зарегистрироваться</a>
                 <img src="img/logoSmall.png" alt="" class="smallLogo" />
-
                 <ul class="menu">
                     <li><a href="http://2012.nastachku.ru/">2012</a></li>
                     <li><a href="http://2013.nastachku.ru/">2013</a></li>
@@ -67,7 +65,7 @@
             <h1>Организаторы</h1>
             <div class="partnersFlexBase">
                 <a href="#">
-                    <div class="partner">
+                    <div class="partner gold">
                         <img src="img/org1.png" alt="" />
                     </div>
                 </a>
@@ -136,30 +134,35 @@
     </div>
     <div id="popupWrapper">
         <div class="popup" id="registerPopup" tabindex="-1">
-            <a href="#" class="close headerClose">x</a>
-            <h3>Регистрация</h3>
-            <form id="registerForm" action="#" method="GET">
-                <div>
-                    <input type="text" placeholder="Имя" name="firstName" class="formControl" required="required"/>
-                    <i class="icon warning" title="В этом поле введите имя (от 2 до 20 символов)."></i>
-                    <input type="text" placeholder="Фамилия" name="lastName" class="formControl" required="required"/>
-                    <i class="icon error" title="Ошибка!!!"></i>
-                    <input type="email" placeholder="Ваш адрес электронной почты" name="email" class="formControl" required="required"/>
-                    <input type="password" placeholder="Придумайте пароль" name="password" id="password" class="formControl" required="required"/>
-                    <input type="password" placeholder="Повторите пароль" name="passwordReply" class="formControl" required="required"/>
-                </div>
-                <p>Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (пользовательское соглашение)</p>
-                <button>Зарегистрироваться</button>
-            </form>
-            <p>Уже зарегистрировались? <a href="#" class="close">Войти в кабинет</a>
-            </p>
+            <div class="popup-body">
+                <a href="#" class="close headerClose">x</a>
+                <h3>Регистрация</h3>
+                <form id="registerForm" action="#" method="GET">
+                    <div>
+                        <input type="text" placeholder="Имя" name="firstName" class="formControl" required="required" />
+                        <i class="icon warning" title="В этом поле введите имя (от 2 до 20 символов)."></i>
+                        <input type="text" placeholder="Фамилия" name="lastName" class="formControl" required="required" />
+                        <i class="icon error" title="Ошибка!!!"></i>
+                        <input type="email" placeholder="Ваш адрес электронной почты" name="email" class="formControl" required="required" />
+                        <input type="password" placeholder="Придумайте пароль" name="password" id="password" class="formControl" required="required" />
+                        <input type="password" placeholder="Повторите пароль" name="passwordReply" class="formControl" required="required" />
+                    </div>
+                    <p>Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (пользовательское соглашение)</p>
+                    <button>Зарегистрироваться</button>
+                </form>
+                <p>
+                    Уже зарегистрировались? <a href="#" class="close">Войти в кабинет</a>
+                </p>
+            </div>
         </div>
         <div class="popup" id="successPopup" tabindex="-1">
-            <a href="#" class="close headerClose">x</a>
-            <h3>Успешная операция</h3>
-            <p>Всё так и вам удалось! Примите наши искренние поздравления! Теперь нажимаем "ОК"!</p>
-            <div class="closeLink">
-                <a href="#" class="close">OK</a>
+            <div class="popup-body">
+                <a href="#" class="close headerClose">x</a>
+                <h3>Успешная операция</h3>
+                <p>Всё так и вам удалось! Примите наши искренние поздравления! Теперь нажимаем "ОК"!</p>
+                <div class="closeLink">
+                    <a href="#" class="close">OK</a>
+                </div>
             </div>
         </div>
     </div>
