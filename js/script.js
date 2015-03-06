@@ -10,7 +10,7 @@ var player;
 playerInit = function () {
     $('#mediaWrapper .button.video').click(function (event) {
         event.preventDefault();
-        $(this).hide();
+        $(this).addClass('disabled');
 
         // 2. This code loads the IFrame Player API code asynchronously.
         var tag = document.createElement('script');
@@ -22,6 +22,7 @@ playerInit = function () {
 };
 
 function onYouTubeIframeAPIReady() {
+    $('#mediaWrapper .button.video').hide();
     player = new YT.Player('player', {
         height: '390',
         width: '640',

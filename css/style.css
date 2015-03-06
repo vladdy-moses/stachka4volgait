@@ -67,6 +67,11 @@ ul {
             background-color: #857f49;
         }
 
+        .button.video.disabled {
+            background-color: #bbb474;
+            color: #fff;
+        }
+
     .button.disabled {
         color: #d8d8d8;
         background-color: #fff;
