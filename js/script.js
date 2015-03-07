@@ -2,6 +2,7 @@ $(function () {
     playerInit();
     popupInit();
     formsValidationInit();
+    partnersButtonInit();
 });
 
 /* YouTube functions BEGIN */
@@ -141,4 +142,21 @@ $.validator.addMethod(
     },
     "Пароль обязательно должен состоять из латинских символов и содержать: минимум 1 заглавную букву, спецсимвол (= ! - @ . _ *) или цифру."
 );
+/* END */
+
+/* PartnersButton functionality BEGIN */
+partnersButtonInit = function () {
+    var dropdownOpened = false;
+    $('#partnersButton').click(function (e) {
+        e.preventDefault();
+
+        if (dropdownOpened) {
+            $(this).siblings('ul').fadeOut(150);
+            dropdownOpened = false;
+        } else {
+            $(this).siblings('ul').fadeIn(150);
+            dropdownOpened = true;
+        }
+    });
+};
 /* END */
