@@ -236,17 +236,24 @@ ul.menu {
     ul.menu li {
         list-style-type: none;
         display: inline-block;
-        padding: 15px;
     }
 
         ul.menu li a {
             text-decoration: none;
             color: #4a4626;
-            transition: text-shadow 200ms linear;
+            -webkit-transition: text-shadow 100ms linear, background-color 100ms linear;
+            -moz-transition: text-shadow 100ms linear, background-color 100ms linear;
+            -ms-transition: text-shadow 100ms linear, background-color 100ms linear;
+            -o-transition: text-shadow 100ms linear, background-color 100ms linear;
+            transition: text-shadow 100ms linear, background-color 100ms linear;
+            padding: 15px;
+            display: block;
         }
 
             ul.menu li a:hover {
+                -ms-text-shadow: 0 0 1px #ccc;
                 text-shadow: 0 0 1px #ccc;
+                background-color: #f0f0f0;
             }
 
 .underHeader {
@@ -279,10 +286,11 @@ ul.menu {
     top: 50px;
     padding: 50px 40px;
     text-align: center;
+    -ms-border-radius: 5px;
     border-radius: 5px;
 }
 
-    .poster h1,
+.poster h1,
     .poster h2 {
         color: #fff;
         padding: 0;
@@ -441,6 +449,7 @@ body.popupOpened {
         -moz-filter: url(../svg/filter.svg#blur);
         -o-filter: url(../svg/filter.svg#blur);
         filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5); /* IE8 */
+        /* ReSharper disable once InvalidValue */
         filter: url(../svg/filter.svg#blur);
     }
 
@@ -455,6 +464,7 @@ body.popupOpened #popupWrapper {
     width: 100%;
     top: 0;
     height: 100%;
+    background-color: #666;
     background-color: rgba(0,0,0,0.5);
     z-index: 1000;
     text-align: center;
@@ -474,7 +484,7 @@ body.popupOpened #popupWrapper {
     text-align: left;
     background-color: #fff;
     border: 1px solid #ef9875;
-    box-shadow: inset 0 0 15px #f0f0f0;
+    /*box-shadow: inset 0 0 15px #f0f0f0;*/
     outline: none;
 }
 
