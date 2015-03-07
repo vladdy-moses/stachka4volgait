@@ -146,14 +146,22 @@
                 <a href="#" class="close headerClose">x</a>
                 <h3>Регистрация</h3>
                 <form id="registerForm" action="#" method="GET">
-                    <div>
-                        <input type="text" placeholder="Имя" name="firstName" class="formControl" required="required" />
-                        <i class="icon warning" title="В этом поле введите имя (от 2 до 20 символов)."></i>
-                        <input type="text" placeholder="Фамилия" name="lastName" class="formControl" required="required" />
-                        <i class="icon error" title="Ошибка!!!"></i>
-                        <input type="email" placeholder="Ваш адрес электронной почты" name="email" class="formControl" required="required" />
-                        <input type="password" placeholder="Придумайте пароль" name="password" id="password" class="formControl" required="required" />
-                        <input type="password" placeholder="Повторите пароль" name="passwordReply" class="formControl" required="required" />
+                    <div class="fields">
+                        <div class="formControl">
+                            <input type="text" placeholder="Имя" name="firstName" required="required" />
+                        </div>
+                        <div class="formControl">
+                            <input type="text" placeholder="Фамилия" name="lastName" required="required"/>
+                        </div>
+                        <div class="formControl">
+                            <input type="email" placeholder="Ваш адрес электронной почты" name="email" required="required" />
+                        </div>
+                        <div class="formControl">
+                            <input type="password" placeholder="Придумайте пароль" name="password" id="password" required="required" />
+                        </div>
+                        <div class="formControl">
+                            <input type="password" placeholder="Повторите пароль" name="passwordReply" required="required" />
+                        </div>
                     </div>
                     <p>Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (пользовательское соглашение)</p>
                     <button>Зарегистрироваться</button>

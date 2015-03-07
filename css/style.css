@@ -475,9 +475,9 @@ footer {
         transition: color 200ms linear;
     }
 
-footer a:hover {
-        color: #ddba5e;
-    }
+        footer a:hover {
+            color: #ddba5e;
+        }
 
     footer ul.social {
         float: right;
@@ -574,7 +574,7 @@ body.popupOpened #popupWrapper {
     padding: 30px;
 }
 
-.formControl {
+/*.formControl {
     display: block;
     padding: 10px 20px;
     border: 1px solid #e2e2e2;
@@ -617,7 +617,7 @@ body.popupOpened #popupWrapper {
             .formControl + label.error:before {
                 content: "!";
                 color: #fd3557;
-            }
+            }*/
 
 /*.icon.warning {
     border-color: #fdb303;
@@ -628,6 +628,85 @@ body.popupOpened #popupWrapper {
         content: "?";
     }
     */
+
+.formControl {
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    margin-bottom: -1px;
+}
+
+    .formControl input {
+        border: none;
+        outline: none;
+        width: 370px;
+        padding: 15px 20px;
+    }
+
+        .formControl input.error {
+            color: #fd1515;
+        }
+
+div.errorWrapper {
+    position: relative;
+    display: inline-block;
+    top: -1px;
+    right: -7px;
+}
+
+    div.errorWrapper:hover {
+        z-index: 1005;
+    }
+
+    div.errorWrapper label {
+        display: none !important; /* Заглушка для страндартного обработчика */
+        vertical-align: middle;
+    }
+
+    div.errorWrapper:hover label {
+        display: inline-block !important; /* Заглушка для страндартного обработчика */
+        position: absolute;
+        top: 3em;
+        width: 250px;
+        padding: 5px;
+        background-color: #fdfdfd;
+        background: linear-gradient(#fdfdfd, #dedede);
+        border: 1px solid #f24e49;
+    }
+
+label.error + div.errorImage {
+    background: url("../img/error.png") no-repeat 0px 0px;
+    display: inline-block;
+    width: 41px;
+    height: 41px;
+    vertical-align: middle;
+}
+
+label.checked + div.errorImage {
+    background: url("../img/valid.png") no-repeat 0px 0px;
+    display: inline-block !important;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+/*
+#registerForm > .fields {
+    display: table;
+    width: 100%;
+}
+
+.fields .formControl {
+    display: table-row;
+}
+
+.formControl input,
+.formControl label {
+    display: table-cell;
+}
+
+.formControl label {
+    white-space: nowrap;
+}*/
 
 .popup button,
 .popup .closeLink a {

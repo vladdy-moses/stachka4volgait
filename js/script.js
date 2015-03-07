@@ -115,6 +115,16 @@ formsValidationInit = function () {
             $('#registerPopup').hide();
             $('#successPopup').show();
             $('.button.register').addClass('disabled');
+        },
+        errorPlacement: function (error, element) {
+            var container = $('<div />');
+            container.addClass('errorWrapper');  // add a class to the wrapper
+            error.insertAfter(element);
+            error.wrap(container);
+            $("<div class='errorImage'></div>").insertAfter(error);
+        },
+        success: function (element) {
+            $(element).addClass("checked");
         }
     });
 };
