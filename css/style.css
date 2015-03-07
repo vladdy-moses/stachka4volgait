@@ -574,65 +574,11 @@ body.popupOpened #popupWrapper {
     padding: 30px;
 }
 
-/*.formControl {
-    display: block;
-    padding: 10px 20px;
-    border: 1px solid #e2e2e2;
-    width: 420px;
-    margin-bottom: -1px;
-}
-
-    .formControl.error {
-        color: #fd1515;
-        border-color: #ef9875;
-        width: 400px;
-        padding-right: 40px;
-    }
-
-    .formControl + label {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        float: right;
-        margin-top: -34px;
-        margin-right: 10px;
-        border: 1px solid #cccccc;
-        -ms-border-radius: 100%;
-        border-radius: 100%;
-        text-align: center;
-        line-height: 32px;
-        font-style: normal;
-        font-size: 0;
-        color: transparent;
-    }
-
-        .formControl + label:before {
-            font-size: 20px;
-        }
-
-        .formControl + label.error {
-            border-color: #fd3557;
-        }
-
-            .formControl + label.error:before {
-                content: "!";
-                color: #fd3557;
-            }*/
-
-/*.icon.warning {
-    border-color: #fdb303;
-    color: #fdb303;
-}
-
-    .icon.warning:before {
-        content: "?";
-    }
-    */
-
 .formControl {
     width: 100%;
     border: 1px solid #e2e2e2;
     margin-bottom: -1px;
+    padding: 1px;
 }
 
     .formControl input {
@@ -645,6 +591,12 @@ body.popupOpened #popupWrapper {
         .formControl input.error {
             color: #fd1515;
         }
+
+@media screen and (max-width: 1024px) {
+    .formControl {
+        width: 460px;
+    }
+}
 
 div.errorWrapper {
     position: relative;
@@ -662,7 +614,7 @@ div.errorWrapper {
         vertical-align: middle;
     }
 
-    div.errorWrapper:hover label {
+    div.errorWrapper:hover label:not(:empty) {
         display: inline-block !important; /* Заглушка для страндартного обработчика */
         position: absolute;
         top: 3em;
@@ -675,38 +627,15 @@ div.errorWrapper {
 
 label.error + div.errorImage {
     background: url("../img/error.png") no-repeat 0px 0px;
-    display: inline-block;
+    display: inline-block !important;
     width: 41px;
     height: 41px;
     vertical-align: middle;
 }
 
-label.checked + div.errorImage {
-    background: url("../img/valid.png") no-repeat 0px 0px;
-    display: inline-block !important;
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
+label.error:empty + div.errorImage {
+    background: none;
 }
-
-/*
-#registerForm > .fields {
-    display: table;
-    width: 100%;
-}
-
-.fields .formControl {
-    display: table-row;
-}
-
-.formControl input,
-.formControl label {
-    display: table-cell;
-}
-
-.formControl label {
-    white-space: nowrap;
-}*/
 
 .popup button,
 .popup .closeLink a {
@@ -775,6 +704,7 @@ label.checked + div.errorImage {
     .poster {
         margin: 20px;
         top: 0;
+        display: block;
     }
 
     #map {

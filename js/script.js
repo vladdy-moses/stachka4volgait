@@ -123,8 +123,10 @@ formsValidationInit = function () {
             error.wrap(container);
             $("<div class='errorImage'></div>").insertAfter(error);
         },
-        success: function (element) {
-            $(element).addClass("checked");
+        onfocusout: function (element) {
+            if (!this.checkable(element)) {
+                this.element(element);
+            }
         }
     });
 };
