@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
     font-family: 'DINProLight';
     src: url('../fonts/DINProLight.eot');
     src: local('DINProLight'), url('../fonts/DINProLight.woff') format('woff'), url('../fonts/DINProLight.ttf') format('truetype');
@@ -225,6 +225,8 @@ h1, h2 {
 .partners h1 {
     text-align: center;
     font-size: 30px;
+    font-weight: normal;
+    color: #535035;
 }
 
 /* Header */
@@ -466,6 +468,15 @@ footer {
     footer a {
         text-decoration: none;
         color: #f8d168;
+        -webkit-transition: color 200ms linear;
+        -moz-transition: color 200ms linear;
+        -ms-transition: color 200ms linear;
+        -o-transition: color 200ms linear;
+        transition: color 200ms linear;
+    }
+
+footer a:hover {
+        color: #ddba5e;
     }
 
     footer ul.social {
@@ -526,7 +537,6 @@ body.popupOpened #popupWrapper {
     text-align: left;
     background-color: #fff;
     border: 1px solid #ef9875;
-    /*box-shadow: inset 0 0 15px #f0f0f0;*/
     outline: none;
 }
 
