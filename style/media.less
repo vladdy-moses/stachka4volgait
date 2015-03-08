@@ -1,4 +1,4 @@
-﻿/* other media fixes */
+﻿/* Здесь собраны все @media-стили для адаптивности */
 @media screen and (max-width: 1024px) {
     ul.menu {
         display: none;
@@ -31,5 +31,46 @@
 
     #map {
         display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body.popupOpened #popupWrapper:before {
+        content: none;
+    }
+
+    .popup {
+        width: 100%;
+        height: 100%;
+        display: block;
+        vertical-align: top;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .formControl {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header .topLine,
+    .underHeader,
+    .docs,
+    .media,
+    .partners,
+    footer {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    #map {
+        width: 100%;
+        border: none;
     }
 }

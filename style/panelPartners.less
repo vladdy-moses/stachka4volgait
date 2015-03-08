@@ -1,14 +1,15 @@
-﻿#partnersWrapper {
+﻿/* Стили для страницы с организаторами */
+#partnersWrapper {
     background-color: #f8f8f8;
     border-top: 1px solid #d8d8d8;
     text-align: center;
     padding: 60px 0;
-}
 
-    #partnersWrapper a {
+    a {
         text-decoration: none;
         font-size: 0;
     }
+}
 
 .partner {
     width: 220px;
@@ -26,26 +27,26 @@
     -ms-transition: box-shadow 150ms linear;
     -o-transition: box-shadow 150ms linear;
     transition: box-shadow 150ms linear;
-}
 
-    .partner:hover {
+    &:hover {
         -webkit-box-shadow: 0 0 10px #ccc, 0 0 10px #f0f0f0 inset;
         -ms-box-shadow: 0 0 10px #ccc, 0 0 10px #f0f0f0 inset;
         box-shadow: 0 0 10px #ccc, 0 0 10px #f0f0f0 inset;
     }
 
-    .partner.gold {
+    &.gold {
         -webkit-box-shadow: 0 0 3px #ccc, 0 0 100px #fbf396 inset;
         -ms-box-shadow: 0 0 3px #ccc, 0 0 100px #fbf396 inset;
         box-shadow: 0 0 3px #ccc, 0 0 100px #fbf396 inset;
-    }
 
-        .partner.gold:hover {
+        &:hover {
             -webkit-box-shadow: 0 0 10px #ccc, 0 0 100px #fbf396 inset;
             -ms-box-shadow: 0 0 10px #ccc, 0 0 100px #fbf396 inset;
             box-shadow: 0 0 10px #ccc, 0 0 100px #fbf396 inset;
         }
+    }
 
-    .partner img {
+    img {
         vertical-align: middle;
     }
+}

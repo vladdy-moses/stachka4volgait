@@ -1,4 +1,5 @@
-﻿.button {
+﻿/* Стили для кнопок */
+.button {
     padding: 7px 15px;
     background-color: #f8f8f8;
     border: 1px solid #d8d8d8;
@@ -11,77 +12,79 @@
     -ms-transition: background-color 200ms linear;
     -o-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
-}
 
-    .button:hover {
+    &:hover {
         background-color: #f0f0f0;
     }
 
-    .button.video {
+    &.video {
         color: #fff;
         background-color: #98925e;
         border-color: #757042;
         padding: 10px 25px;
-    }
 
-        .button.video:hover {
+        &:hover {
             background-color: #857f49;
         }
 
-        .button.video.disabled {
+        &.disabled {
             background-color: #bbb474;
             color: #fff;
         }
+    }
 
-    .button.disabled {
+    &.disabled {
         color: #d8d8d8;
         background-color: #fff;
         border-color: #ededed;
         cursor: default;
     }
 
-.icon {
-    display: inline-block;
-    width: 40px;
-    height: 33px;
-    margin-top: -7px;
-}
-
-    .icon:after {
-        content: "";
+    // icons
+    & .icon {
+        display: inline-block;
+        width: 40px;
         height: 33px;
-        display: block;
-        z-index: -1;
-    }
+        margin-top: -7px;
 
-    .icon.icon-left {
-        float: left;
-        margin-left: -14px;
-        border-right: 1px solid #fff;
-    }
-
-        .icon.icon-left:after {
-            border-right: 1px solid #e2e2e2;
+        &:after {
+            content: "";
+            height: 33px;
+            display: block;
+            z-index: -1;
         }
 
-    .icon.pdf {
-        background-image: url(../content/pdf.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
+        &.icon-left {
+            float: left;
+            margin-left: -14px;
+            border-right: 1px solid #fff;
 
-    .icon.arrow-down {
-        background-image: url(../content/arrowDown.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-    .icon.icon-right {
-        float: right;
-        margin-right: -14px;
-        border-left: 1px solid #fff;
-    }
-
-        .icon.icon-right:after {
-            border-left: 1px solid #e2e2e2;
+            &:after {
+                border-right: 1px solid #e2e2e2;
+            }
         }
+
+        &.icon-right {
+            float: right;
+            margin-right: -14px;
+            border-left: 1px solid #fff;
+
+            &:after {
+                border-left: 1px solid #e2e2e2;
+            }
+        }
+
+        // icon pictures
+        &.pdf {
+            background-image: url(../content/pdf.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        &.arrow-down {
+            background-image: url(../content/arrowDown.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+}

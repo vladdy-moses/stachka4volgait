@@ -1,4 +1,4 @@
-﻿/* Footer */
+﻿/* Стили для футера */
 #footerWrapper {
     background-color: #303023;
     color: #fff;
@@ -7,9 +7,8 @@
 footer {
     color: #fff;
     padding: 30px 0;
-}
 
-    footer a {
+    & a {
         text-decoration: none;
         color: #f8d168;
         -webkit-transition: color 200ms linear;
@@ -17,15 +16,16 @@ footer {
         -ms-transition: color 200ms linear;
         -o-transition: color 200ms linear;
         transition: color 200ms linear;
-    }
 
-        footer a:hover {
+        &:hover {
             color: #ddba5e;
         }
+    }
 
-    footer ul.social {
+    & ul.social {
         float: right;
     }
+}
 
 .copyLeft span {
     padding-right: 20px;
