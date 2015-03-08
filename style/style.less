@@ -1,4 +1,4 @@
-п»ї@font-face {
+@font-face {
     font-family: 'DINProLight';
     src: url('../fonts/DINProLight.eot');
     src: local('DINProLight'), url('../fonts/DINProLight.woff') format('woff'), url('../fonts/DINProLight.ttf') format('truetype');
@@ -105,13 +105,13 @@ ul {
         }
 
     .icon.pdf {
-        background-image: url(../img/pdf.png);
+        background-image: url(../content/pdf.png);
         background-position: center center;
         background-repeat: no-repeat;
     }
 
     .icon.arrow-down {
-        background-image: url(../img/arrowDown.png);
+        background-image: url(../content/arrowDown.png);
         background-position: center center;
         background-repeat: no-repeat;
     }
@@ -294,7 +294,7 @@ ul.menu {
 
 /* Map and poster */
 #mapWrapper {
-    background-image: url(../img/map.png);
+    background-image: url(../content/map.png);
     -moz-background-position-x: center;
     -o-background-position-x: center;
     background-position-x: center;
@@ -499,11 +499,11 @@ body.popupOpened {
     body.popupOpened #partnersWrapper,
     body.popupOpened #footerWrapper {
         -webkit-filter: blur(5px);
-        -moz-filter: url(../svg/filter.svg#blur);
-        -o-filter: url(../svg/filter.svg#blur);
+        -moz-filter: url(filter.svg#blur);
+        -o-filter: url(filter.svg#blur);
         filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5); /* IE8 */
         /* ReSharper disable once InvalidValue */
-        filter: url(../svg/filter.svg#blur);
+        filter: url(filter.svg#blur);
     }
 
 #popupWrapper {
@@ -610,12 +610,12 @@ div.errorWrapper {
     }
 
     div.errorWrapper label {
-        display: none !important; /* Р—Р°РіР»СѓС€РєР° РґР»СЏ СЃС‚СЂР°РЅРґР°СЂС‚РЅРѕРіРѕ РѕР±СЂР°Р±РѕС‚С‡РёРєР° */
+        display: none !important; /* Заглушка для страндартного обработчика */
         vertical-align: middle;
     }
 
     div.errorWrapper:hover label:not(:empty) {
-        display: inline-block !important; /* Р—Р°РіР»СѓС€РєР° РґР»СЏ СЃС‚СЂР°РЅРґР°СЂС‚РЅРѕРіРѕ РѕР±СЂР°Р±РѕС‚С‡РёРєР° */
+        display: inline-block !important; /* Заглушка для страндартного обработчика */
         position: absolute;
         top: 3em;
         width: 250px;
@@ -626,7 +626,7 @@ div.errorWrapper {
     }
 
 label.error + div.errorImage {
-    background: url("../img/error.png") no-repeat 0px 0px;
+    background: url("../content/error.png") no-repeat 0px 0px;
     display: inline-block !important;
     width: 41px;
     height: 41px;
