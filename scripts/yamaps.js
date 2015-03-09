@@ -12,11 +12,12 @@ function init() {
         controls: ['zoomControl']
     });
 
+    /* placemarks */
     myPlacemark = new ymaps.Placemark([54.6269, 39.6916], {
         hintContent: 'Рязань'
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/pin1.png',
+        iconImageHref: 'content/pin1.png',
         iconImageSize: [43, 40],
         iconImageOffset: [-33, -40]
     });
@@ -26,7 +27,7 @@ function init() {
         hintContent: 'Саранск'
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/pin2.png',
+        iconImageHref: 'content/pin2.png',
         iconImageSize: [43, 32],
         iconImageOffset: [-35, -31]
     });
@@ -36,23 +37,36 @@ function init() {
         hintContent: 'Уфа'
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/pin3.png',
+        iconImageHref: 'content/pin3.png',
         iconImageSize: [57, 49],
         iconImageOffset: [-37, -48]
     });
     myMap.geoObjects.add(myPlacemark);
 
     myPlacemark = new ymaps.Placemark([54.31981650975, 48.405634621123], {
-        hintContent: 'Стачка!',
-        balloonContent: 'Здесь пройдёт Стачка 2014.'
+        hintContent: 'Здесь пройдёт Стачка 2014.'
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/pin4.png',
+        iconImageHref: 'content/pin4.png',
         iconImageSize: [49, 55],
         iconImageOffset: [-28, -53]
     });
-    myPlacemark.events.add('click', function () {
-        $('#mapWrapper .poster').show();
-    });
     myMap.geoObjects.add(myPlacemark);
+
+    /* click events */
+    myPlacemark.events.add('click', stachkaMarkerClick);
+    myMap.geoObjects.events.add('click', mapClick);
+    myMap.events.add('click', mapClick);
+
+    /* disable zoom on scroll */
+    myMap.behaviors.disable('scrollZoom');
 }
+
+stachkaMarkerClick = function(e) {
+    $('#mapWrapper .poster').removeClass("hide");
+    e.stopPropagation();
+};
+
+mapClick = function () {
+    $('#mapWrapper .poster').addClass("hide");
+};

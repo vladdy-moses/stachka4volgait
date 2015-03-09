@@ -9,12 +9,26 @@
     text-align: center;
 }
 
+#map {
+    width: 1420px;
+    height: 335px;
+    margin: 0 auto;
+    border: 1px solid #d8d8d8;
+    border-bottom: 3px solid #d8d8d8;
+}
+
+#posterWrapper {
+    text-align: center;
+    position: relative;
+    top: -285px;
+    display: inline-block;
+}
+
 .poster {
     display: inline-block;
     background-color: #ef9875;
     background-color: rgba(239, 152, 117, 0.9);
     position: relative;
-    top: 50px;
     padding: 50px 40px;
     text-align: center;
     -ms-border-radius: 5px;
@@ -38,12 +52,8 @@
         font-family: 'Open Sans';
         font-weight: normal;
     }
-}
 
-#map {
-    width: 1420px;
-    height: 335px;
-    margin: 0 auto;
-    border: 1px solid #d8d8d8;
-    border-bottom: 3px solid #d8d8d8;
+    &.hide {
+        display: none;
+    }
 }

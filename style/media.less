@@ -23,10 +23,19 @@
         height: auto;
     }
 
-    .poster {
-        margin: 20px;
+    #posterWrapper {
+        position: initial;
         top: 0;
         display: block;
+    }
+
+    .poster {
+        margin: 20px;
+        display: block;
+
+        &.hide {
+            display: block;
+        }
     }
 
     #map {
