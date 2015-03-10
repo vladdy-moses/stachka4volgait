@@ -60,6 +60,15 @@ body.popupOpened {
         height: 20px;
         line-height: 20px;
         text-align: center;
+        -webkit-transition: background-color 200ms linear;
+        -moz-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        -o-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+
+        &:hover {
+            background-color: #f1d1c4;
+        }
     }
 
     .popup-body {
